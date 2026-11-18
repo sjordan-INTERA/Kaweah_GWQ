@@ -1,0 +1,11 @@
+name: kaweah-gwq
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas=2.3
+  - openpyxl
+  - xlrd=2.0.2
+  - matplotlib
+  - contextily
+  - geopandas

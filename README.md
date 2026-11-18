@@ -1,48 +1,52 @@
-# Kaweah groundwater-quality seasonal append
+# Kaweah groundwater-quality workflow
 
-Run the top-level workflow in the jea environment:
+Append seasonal FGL lab results to the Kaweah RMS master workbook and generate
+time-series charts for the wells and constituents with current-season exceedances.
 
-    micromamba run -n jea python Kaweah_GWQ_Casesheet_Workflow.py
+## Set up and run
 
-The supplied Fall 2026 files are legacy XLS workbooks. The jea environment
-needs xlrd 2.0.2 as well as its existing pandas and openpyxl packages.
-The reader uses the xlrd corruption-tolerance option because the Fall files
-have nonstandard workbook containers. Every file still must pass column,
-date, result, and reporting-limit checks. Source files are never rewritten.
+Create the environment with micromamba from the repo root.
 
-## New season
+```sh
+micromamba create -f environment.yml
+```
 
-Change analysis_year and analysis_season in the driver's Config. All run
-settings are in that dataclass; the script does not take command-line options.
-Put regular lab files in data/FGL_samples/<cycle>/.
-If there are confirmation files, put them in
-data/FGL_confirmations/<cycle>/. Set previous_main_spreadsheet explicitly
-to the preceding season's saved workbook. Fall 2026 starts from the supplied
-data/legacy_source_data/KSB_RMS_master_2026S.xlsx.
+Edit the `Config` dataclass in `Kaweah_GWQ_Casesheet_Workflow.py`, then run the workflow.
 
-Unresolved descriptions are listed in the season's QA sample match audit.
-Record confirmed FGL well-name corrections and exclusions in
-data/sample_match_decisions/<cycle>.csv with Description,Action,RMS_ID,Notes.
-Use the original FGL description and the action map or exclude. For map,
-enter the RMS ID from the Current RMS Network tab. Then rerun. Different LAB_IDs
-are separate samples, including supplemental analyses of one constituent.
-Blank and duplicate descriptions stay in the separate QC CSV.
+```sh
+micromamba run -n kaweah-gwq python Kaweah_GWQ_Casesheet_Workflow.py
+```
 
-The final plotting input is
-output/<cycle>/spreadsheet/KSB_RMS_master_<cycle>.xlsx. The workbook
-keeps the DMS_Data, Current_RMS_Metadata, and QA_Issues sheets.
-The qa folder also contains the match audit, QC table, and validation summary.
-An input or matching error stops before the season workbook is written.
+Set `analysis_year` and `analysis_season` (`spring` or `fall`). Together they
+determine the cycle tag, such as `2026F`.
 
-## 2026 validation
+- Set `analysis = True` to process lab results and write the season's workbooks.
+- Set `plotting = True` to generate charts from the season's saved workbooks.
+- Enable both to process the data and generate charts in one run.
 
-The saved Spring 2026 replay has 12,669 RMS rows: 1,056 regular and 19
-confirmation Spring rows, with 32 QC rows outside the master. It agrees with
-the supplied workbook on all measurement keys and 72 columns; a few historical
-coordinates and elevations differ only at approximately 1e-14 after Excel
-read/write. The current workflow reads the previous Excel workbook, so it
-does not regenerate Spring 2026 from the older historical CSV.
+## Prepare a new season
 
-Compare the saved Spring replay and Fall append with:
+- Set `previous_main_spreadsheet` to the preceding season's master workbook.
+  For Fall 2026, the configured starting point is
+  `data/legacy_source_data/KSB_RMS_master_2026S.xlsx`.
+- Set `tracking_file` to the RMS tracking workbook. The workflow uses the
+  **Current RMS Network** tab to match samples and refresh well metadata.
+- Put the season's FGL `.xls` or `.xlsx` files in `data/FGL_samples/<cycle>/`.
+  Put optional confirmation files in `data/FGL_confirmations/<cycle>/` and
+  optional QC workbooks in `data/FGL_samples/<cycle>/SAMPS_DUPS_BLANKS/`.
+- Check `output/<cycle>/qa/sample_match_audit_<cycle>.csv` for unresolved
+  samples. Record confirmed well-name corrections and exclusions in
+  `data/sample_match_decisions/<cycle>.csv` using the columns
+  `Description,Action,RMS_ID,Notes`. Use the original FGL description and set
+  `Action` to `map` with a current RMS ID, or `exclude` with a blank RMS ID.
+  Rerun the analysis after reviewing any unresolved samples.
 
-    micromamba run -n jea python validate_2026.py
+## Outputs
+
+| Path under `output/<cycle>/` | Contents |
+| --- | --- |
+| `spreadsheet/KSB_RMS_master_<cycle>.xlsx` | `DMS_Data`, `Current_RMS_Metadata`, and `QA_Issues` sheets |
+| `spreadsheet/<Season>_<Year>_exceedances.xlsx` | Current-season exceedance results used to select charts |
+| `qa/` | Sample match audit, QC results, and validation summary |
+| `png/` | Individual exceedance charts by well and constituent |
+| `pdf/all_exceedances_<cycle>.pdf` | All exceedance charts in a single PDF |
