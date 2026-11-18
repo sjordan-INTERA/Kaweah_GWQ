@@ -1,0 +1,11 @@
+metric,value
+previous_rows,76596
+current_regular_rows,1056
+current_confirmation_rows,19
+separate_qc_rows,32
+reviewed_exclusions,0
+current_rms_wells,75
+current_cycle_wells_with_results,66
+rms_master_rows,12669
+current_sample_date_min,2026-02-12 00:00:00
+current_sample_date_max,2026-06-18 00:00:00

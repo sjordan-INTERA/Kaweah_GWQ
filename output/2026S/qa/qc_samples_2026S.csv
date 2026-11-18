@@ -1,0 +1,33 @@
+GM_WELL_ID,GM_CHEMICAL_NAME,GM_SAMP_COLLECTION_DATE,GM_RESULT,GM_RESULT_MODIFIER,GM_CHEMICAL_UNITS,SRC_ANALYSIS_DATE,Sampling_Round,SOURCE,LAB_ID,QC_TYPE,SOURCE_FILE,pH_source,Description
+,Arsenic,2026-04-01,1.0,<,UG/L,2026-04-03,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Boron,2026-04-01,0.02,=,MG/L,2026-04-02,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Sodium,2026-04-01,14.0,=,MG/L,2026-04-07,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Uranium,2026-04-01,1.35,=,PCI/L,2026-04-02,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Chloride,2026-04-01,6.0,=,MG/L,2026-04-07,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,"Chromium, Hexavalent (Cr6)",2026-04-01,0.7,=,UG/L,2026-04-06,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Specific Conductivity,2026-04-01,234.0,=,UMHOS/CM,2026-04-07,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Nitrate as N,2026-04-01,1.9,=,MG/L,2026-04-02,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Total Dissolved Solids,2026-04-01,150.0,=,MG/L,2026-04-06,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Sulfate,2026-04-01,8.8,=,MG/L,2026-04-07,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Perchlorate,2026-04-01,0.3,=,UG/L,2026-04-09,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,"1,2-Dibromo-3-chloropropane (DBCP)",2026-04-01,0.01,<,UG/L,2026-04-08,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Tetrachloroethene (PCE),2026-04-01,0.5,<,UG/L,2026-04-06,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,"1,2,3-Trichloropropane (1,2,3 TCP)",2026-04-01,0.005,<,UG/L,2026-04-07,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,Gross Alpha radioactivity,2026-04-01,3.67,=,PCI/L,2026-04-08,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-DUP
+,pH,2026-04-01,7.96,=,UNITS,,Spring_2026,qc,VI 2642356-004,Duplicate,CA5400903_001_001_samp_dup_blank.xlsx,field,CA5400903_001_001-DUP
+,Arsenic,2026-04-01,1.0,<,UG/L,2026-04-03,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Boron,2026-04-01,0.01,<,MG/L,2026-04-02,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Sodium,2026-04-01,1.0,<,MG/L,2026-04-07,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Uranium,2026-04-01,0.67,<,PCI/L,2026-04-02,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Chloride,2026-04-01,1.0,<,MG/L,2026-04-08,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,"Chromium, Hexavalent (Cr6)",2026-04-01,0.1,<,UG/L,2026-04-06,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Specific Conductivity,2026-04-01,3.0,=,UMHOS/CM,2026-04-07,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Nitrate as N,2026-04-01,0.4,<,MG/L,2026-04-02,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Total Dissolved Solids,2026-04-01,20.0,<,MG/L,2026-04-06,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Sulfate,2026-04-01,0.5,<,MG/L,2026-04-08,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Perchlorate,2026-04-01,0.1,<,UG/L,2026-04-10,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,"1,2-Dibromo-3-chloropropane (DBCP)",2026-04-01,0.01,<,UG/L,2026-04-08,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Tetrachloroethene (PCE),2026-04-01,0.5,<,UG/L,2026-04-06,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,"1,2,3-Trichloropropane (1,2,3 TCP)",2026-04-01,0.005,<,UG/L,2026-04-07,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,Gross Alpha radioactivity,2026-04-01,0.0849,=,PCI/L,2026-04-08,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,,CA5400903_001_001-Blank
+,pH,2026-04-01,7.16,=,UNITS,,Spring_2026,qc,VI 2642356-005,Field Blank,CA5400903_001_001_samp_dup_blank.xlsx,field,CA5400903_001_001-Blank

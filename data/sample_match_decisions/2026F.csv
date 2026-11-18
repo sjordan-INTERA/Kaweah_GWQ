@@ -1,0 +1,5 @@
+Description,Action,RMS_ID,Notes
+19S22E34_DOM 005,map,19S22E34_DOM005,Lab inserted a space before the well number
+WCR2022_15044,map,WCR2022-15044,Lab used an underscore where the RMS ID has a hyphen
+16S26E36_DOM001,exclude,,Not on the Current RMS Network
+WELL 82-01 - BEFORE_GAC-TCP,map,CA5410016_094_094,FGL description for WELL 82-01
