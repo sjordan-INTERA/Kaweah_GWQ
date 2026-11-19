@@ -136,7 +136,8 @@ def run_analysis(cfg):
     audit.to_csv(audit_path, index=False)
     if match_errors:
         raise ValueError(
-            f"{len(match_errors)} sample match issue(s); review {audit_path}: " + "; ".join(match_errors[:5])
+            f"{len(match_errors)} sample match issue(s); review {audit_path}: " + 
+            "; ".join(match_errors[:5])
             )
 
     # -- Convert new laboratory rows to the main spreadsheet fields
@@ -160,7 +161,8 @@ def run_analysis(cfg):
         pd.DataFrame({"conflicting_lab_analysis": conflicts}).to_csv(
             conflict_path, index=False)
         raise ValueError(
-            f"Conflicting repeated lab analyses; review {conflict_path}: " + "; ".join(conflicts[:5])
+            f"Conflicting repeated lab analyses; review {conflict_path}: " + 
+            "; ".join(conflicts[:5])
             )
     measurements = measurements.drop_duplicates(
         ["GM_WELL_ID", "LAB_ID", "GM_CHEMICAL_NAME"], keep="first"
@@ -173,7 +175,7 @@ def run_analysis(cfg):
         cfg.sampling_round
         )
     
-    # -- Build new main spreadsheet using the pevious season, current season, and defined RMS wells
+    # -- Build new main spreadsheet using the pevious season, current season, and RMS wells
     master = spreadsheet_utils.build_rms_master(
         updated, 
         rms,
@@ -238,6 +240,7 @@ def run_plotting(cfg):
         cfg.tag
         )
     
+    
 def main():
     # -- Load config settings
     cfg = Config()
@@ -249,6 +252,7 @@ def main():
     # -- Run plotting functions
     if cfg.plotting:
         run_plotting(cfg)
+
 
 if __name__ == "__main__":
     main()

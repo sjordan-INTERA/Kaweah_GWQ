@@ -121,18 +121,24 @@ def plot_exceedance_charts(master,exceeded,out_path,season):
             plt.close(fig)
             
             # -- Create three mile buffer constituent figures
-            plot_3_mile_figures(
+            nearby_figures = plot_3_mile_figures(
                 master, well_id, constit, constit_abb, mcl, units, out_folder
-             )
+                )
+            for nearby_fig in nearby_figures:
+                pdf.savefig(
+                    nearby_fig,
+                    bbox_inches='tight',
+                    dpi=250
+                    )
+                plt.close(nearby_fig)
 
     
 def plot_3_mile_figures(master, well_id, constit, constit_abb, mcl, units, out_folder):
     """
-    Select the series to use when plotting nearby wells for an exceedance.
-
-    Returns measurement rows with distance_miles; add plotting below when ready.
+    Plot nearby wells and return their figures for the exceedance PDF.
     """
     # -- Find wells within three miles that have dated results for this constituent
+    figures = []
     nearby_data = get_nearby_constituent_data(master, well_id, constit)
     nearby_locations = get_nearby_well_locations(master, well_id)
     map_points = gpd.GeoDataFrame(
@@ -159,7 +165,7 @@ def plot_3_mile_figures(master, well_id, constit, constit_abb, mcl, units, out_f
 
     if len(neighbor_ids) == 0:
         print(f"...No other wells within 3 miles with {constit} data for {well_id}")
-        return
+        return figures
 
     # -- Make a plot for each well within three miles
     for _id in neighbor_ids:
@@ -294,6 +300,8 @@ def plot_3_mile_figures(master, well_id, constit, constit_abb, mcl, units, out_f
             bbox_inches='tight',
             dpi=250
             )
-        plt.close(fig)
+        figures.append(fig)
+
+    return figures
         
     
