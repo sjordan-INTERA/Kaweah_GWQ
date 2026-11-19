@@ -238,8 +238,6 @@ def run_plotting(cfg):
         cfg.tag
         )
     
-    
-
 def main():
     # -- Load config settings
     cfg = Config()
